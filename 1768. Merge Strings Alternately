@@ -21,3 +21,17 @@ public String mergeAlternately(String word1, String word2) {
         return res.toString();
         
     }
+
+Q: Why you create stringbuilder instead of string as a res?
+
+ans: Using StringBuilder instead of String for string concatenation inside a 
+loop is more efficient in Java. The reason is that strings in Java are immutable, 
+meaning once a string is created, you cannot modify its content. Therefore,
+every time you concatenate two strings using the + operator or concat() method, 
+a new string is created.
+In contrast, StringBuilder is mutable, and it allows you to efficiently modify the content of 
+the string without creating a new object for each concatenation operation. This can lead to better performance,
+especially when dealing with a large number of concatenations inside a loop.
+For small cases, the performance difference might not be significant,
+but it's considered a good practice to use StringBuilder when you have multiple concatenations in a loop or a 
+situation where performance matters.
