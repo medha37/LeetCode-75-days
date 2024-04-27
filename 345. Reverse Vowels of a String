@@ -1,0 +1,31 @@
+https://leetcode.com/problems/reverse-vowels-of-a-string/description/?envType=study-plan-v2&envId=leetcode-75
+
+Sol:
+function isVowel(x){
+    return (x === 'a' || x === 'e' || x === 'i' || x === 'o' || x === 'u' || x === 'A' || x === 'E' || x === 'I' || x === 'O' || x === 'U');     
+ }
+
+// Chek vowels using Regex
+//function isVowel(x) {
+   // return /[aeiouAEIOU]/.test(x);
+//}
+
+function reverseVowels(s) {
+    let i = 0, j = s.length - 1;
+    s = s.split('');
+
+    while (i < j) {
+        if (isVowel(s[i]) && isVowel(s[j])) {
+            [s[i], s[j]] = [s[j], s[i]];
+            i++;
+            j--;
+        } else if (!isVowel(s[i])) {
+            i++;
+        } else if (!isVowel(s[j])) {
+            j--;
+        }
+    }
+    return s.join('');
+}
+Time complexity: O(n)
+Space Complexity: O(1)
