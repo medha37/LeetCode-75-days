@@ -1,0 +1,21 @@
+https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/description/?envType=study-plan-v2&envId=leetcode-75
+
+Sol:
+var kidsWithCandies = function(candies, extraCandies) {
+    let res = [];
+    var maxEle = Math.max(...candies);
+
+    // for(var i=0; i<candies.length; i++){
+    //     if(candies[i] > maxEle){
+    //         maxEle = candies[i];
+    //     }
+    // }
+
+    for(var i=0; i<candies.length; i++){
+        if(candies[i] + extraCandies >= maxEle)
+            res.push(true);
+        else
+            res.push(false);    
+    }
+    return res;
+};
