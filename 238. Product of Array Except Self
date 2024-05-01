@@ -1,0 +1,24 @@
+https://leetcode.com/problems/product-of-array-except-self/description/?envType=study-plan-v2&envId=leetcode-75
+
+Sol: 
+  var productExceptSelf = function(nums) {
+      let n = nums.length;
+      let pre = new Array(n);
+      pre[0] = 1;
+      let suf = new Array(n);
+      suf[n-1] = 1;
+      let res = [];
+  
+      for(let i=1; i<n; i++){
+          pre[i] = pre[i-1] * nums[i-1];
+      }
+  
+      for(let i=n-2; i>=0; i--){
+          suf[i] = suf[i+1] * nums[i+1];
+      }
+  
+      for(let i=0; i<n; i++){
+          res.push(pre[i] * suf[i]);
+      }
+      return res;  
+  };
