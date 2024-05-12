@@ -1,0 +1,20 @@
+https://leetcode.com/problems/move-zeroes/description/?envType=study-plan-v2&envId=leetcode-75
+
+Sol: 
+var moveZeroes = function(nums) {
+    let count0 = 0;
+    let countN = 0;
+    for(let i=0; i<nums.length; i++){
+        if(nums[i] === 0){
+            count0++;
+        } else {
+            nums[countN] = nums[i];
+            countN++;
+        }
+        
+    }
+    while(count0--){
+       nums[countN++] = 0;
+    }
+    return nums;
+};
