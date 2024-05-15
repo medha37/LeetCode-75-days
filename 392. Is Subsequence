@@ -1,0 +1,17 @@
+https://leetcode.com/problems/is-subsequence/description/?envType=study-plan-v2&envId=leetcode-75
+
+Sol: 
+var isSubsequence = function(s, t) {
+    let flag = 0;
+    let i=0, j=0;
+    while(i < t.length){
+        if(t[i] === s[j]){
+            flag++;
+            i++;
+            j++;
+        } else {
+            i++;
+        }
+    }
+    return flag === s.length ? true : false;
+};
