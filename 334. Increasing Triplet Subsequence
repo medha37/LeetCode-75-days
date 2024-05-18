@@ -1,5 +1,12 @@
 https://leetcode.com/problems/increasing-triplet-subsequence/?envType=study-plan-v2&envId=leetcode-75
 
+Approach:
+1. Itrate the loop over given set of integer.
+2. Store the smallest element in first varible.
+3. Store the sec min element which is greater than the first element.
+4. At the 3rd iteration if the value of element is greater than both first and sec simply return true as we found 
+   the desired triplet.
+
 Sol: 
 var increasingTriplet = function(nums) {
     let n = nums.length;
