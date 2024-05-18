@@ -18,3 +18,9 @@ var gcdOfStrings = function(str1, str2) {
     let m = str2.length;
     return str1+str2 == str2+str1 ? str1.slice(0, gcd(n,m)) : ""
 };
+Time complexity: O(m+n)
+    - We need to compare the two concatenations of length O(m+n), it takes O(m+n) time.
+    - We calculate the GCD using binary Euclidean algorithm, it takes log⁡(m⋅n) time.
+    - To sum up, the overall time complexity is O(m+n).
+Space complexity: O(m+n)
+    - We need to compare the two concatenations of length O(m+n).
