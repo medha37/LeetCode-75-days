@@ -1,5 +1,10 @@
+Problem Link: 
+https://leetcode.com/problems/greatest-common-divisor-of-strings/?envType=study-plan-v2&envId=leetcode-75
 
-Problem Link: https://leetcode.com/problems/greatest-common-divisor-of-strings/?envType=study-plan-v2&envId=leetcode-75
+Approach:
+1. Firstly check if the concatination of both strings are same
+2. If same slice the str1 from 0 to gcd(str1.length, str2.length)
+
 Solution in javascript:
 function gcd(a, b){
     if(b == 0)
