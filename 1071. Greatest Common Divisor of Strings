@@ -2,8 +2,9 @@ Problem Link:
 https://leetcode.com/problems/greatest-common-divisor-of-strings/?envType=study-plan-v2&envId=leetcode-75
 
 Approach:
-1. Firstly check if the concatination of both strings are same
-2. If same slice the str1 from 0 to gcd(str1.length, str2.length)
+1. Check if the concatenations of str1 and str2 in different orders are the same. If not, return "".
+2. Get the GCD gcdLength of the two lengths of str1 and str2.
+3. Return the prefix string with a length of gcdLength of either str1 or str2 as the answer.
 
 Solution in javascript:
 function gcd(a, b){
