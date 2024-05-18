@@ -1,0 +1,26 @@
+Problem link: https://leetcode.com/problems/container-with-most-water/description/?envType=study-plan-v2&envId=leetcode-75
+
+Approach:
+1. We have to find the max area with water so, the formula for the same is Area = Height * width
+2. Initialise i with 0 ans j with n-1 and calculate the area accordingly 
+3. Do consider the max height at (i, j) since we are reducing the width
+4. Increment/Decrement i or j after selecting the max height
+5. Formula maxArea = min(height[i], height[j]) * (j-i) // width
+
+Sol:
+  var maxArea = function(height) {
+     let n = height.length;
+     let i = 0;
+     let j = n-1;
+     let maxArea = 0;
+      while(i < j){
+          let area =  Math.min(height[i], height[j]) * (j-i);
+          if(height[i] < height[j]){
+              i++;
+          } else {
+              j--;
+          }
+          maxArea = Math.max(area, maxArea);
+      }
+      return maxArea;
+  };
