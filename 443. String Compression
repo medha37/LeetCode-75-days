@@ -1,5 +1,6 @@
 https://leetcode.com/problems/string-compression/description/?envType=study-plan-v2&envId=leetcode-75
 
+Sol:
 var compress = function(chars) {
     let count = 1;
     let i = 1;
@@ -12,6 +13,7 @@ var compress = function(chars) {
             if(count > 1){
                 // Convert count to string before pushing
                 const countStr = count.toString();
+                // Push converted count string as a character in res
                 for(let j=0; j<countStr.length; j++){
                     res.push(countStr[j]);
                 }       
@@ -24,6 +26,7 @@ var compress = function(chars) {
     if(count > 1){
         // Convert count to string before pushing
         const countStr = count.toString();
+       // Push converted count string as a character in res
         for(let j=0; j<countStr.length; j++){
             res.push(countStr[j]);
         }   
