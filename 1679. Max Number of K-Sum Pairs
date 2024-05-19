@@ -1,0 +1,28 @@
+Problem link: 
+https://leetcode.com/problems/max-number-of-k-sum-pairs/description/?envType=study-plan-v2&envId=leetcode-75
+
+Approach: 
+1. Create a map to keep track of the counts of the numbers we've seen and a variable res to store the number of valid pairs.
+2. For each number, calculate its complement (k - num).
+3. If the complement exists in the map and its count is greater than 0, we have found a valid pair. 
+  - We increment the result (res) and decrease the count of the complement in the map.
+  - If the complement doesn't exist in the map or its count is 0, we update the map with the current number's count.
+4. Use map.set(num, (map.get(num) || 0) + 1) to either increment the count of the current number if it already exists in the map, or set it to 1 if it doesn't.
+
+Sol:
+  var maxOperations = function(nums, k) {
+      let mp = new Map();
+      let res = 0;
+      for(let i of nums){
+          let x = k-i;
+          if(mp.has(x) && mp.get(x) > 0){
+              res++;
+             mp.set(x, mp.get(x) - 1);
+          }
+          else {
+              mp.set(i, (mp.get(i) || 0) +1);
+          }
+      }
+      return res;
+  };
+Time and space complexity is O(n)
