@@ -1,0 +1,25 @@
+Problem link: 
+https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/description/?envType=study-plan-v2&envId=leetcode-75
+
+Sol:
+var longestSubarray = function(nums) {
+    let curr = 0;
+    let prev = 0;
+    let ans = 0;
+
+    for(let n of nums){
+        if(n === 1){
+            curr++;
+        } else {
+            ans = Math.max(ans, curr+prev);
+            prev = curr;
+            curr = 0;
+        }
+    }
+
+    ans = Math.max(ans, curr+prev);
+
+    return ans === nums.length ? ans - 1: ans;
+};
+
+Usefull link : https://www.youtube.com/watch?v=jhBrybXSFTs
