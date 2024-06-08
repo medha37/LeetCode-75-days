@@ -1,0 +1,15 @@
+Problem link: https://leetcode.com/problems/find-pivot-index/description/?envType=study-plan-v2&envId=leetcode-75
+
+Sol: 
+var largestAltitude = function(gain) {
+    let n = gain.length;
+    let res = 0;
+    let sum = 0;
+
+    for(let i=0; i<n; i++){
+        sum += gain[i];
+        res = Math.max(res, sum);
+    }
+
+    return res;
+};
