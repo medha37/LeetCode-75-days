@@ -1,0 +1,17 @@
+https://leetcode.com/problems/find-the-difference-of-two-arrays/description/?envType=study-plan-v2&envId=leetcode-75
+
+Sol:
+var findDifference = function(nums1, nums2) {
+    var temp1 = new Set(nums1);
+    var temp2 = new Set(nums2);
+    var ans = [];
+    var res1 = [...temp1].filter((ele) => !(temp2.has(ele)));
+    var res2 = [...temp2].filter((ele) => !(temp1.has(ele)));
+
+    ans.push(res1);
+    ans.push(res2);
+    return ans;  
+};
+
+Time complexity: O(n1+n2)
+Space complexity: O(n1+n2)
