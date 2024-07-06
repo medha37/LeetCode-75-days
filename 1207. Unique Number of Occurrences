@@ -1,0 +1,33 @@
+https://leetcode.com/problems/unique-number-of-occurrences/description/?envType=study-plan-v2&envId=leetcode-75
+
+Approach: 
+1. Create map for storing frequency.
+2. Create set for checking unique values of map.
+3. Check for map value in set if it is already present return false otherwise add that value in the set.
+
+Sol:
+var uniqueOccurrences = function(arr) {
+    let mp = new Map();
+    let se = new Set();
+
+    for(let ele of arr){
+        if(mp.has(ele)){
+            mp.set(ele, mp.get(ele) + 1);
+        } else {
+            mp.set(ele, 1);
+        }
+    }
+
+    for(let val of mp.values()){
+        if(se.has(val)){
+            return false;
+        } else {
+            se.add(val);
+        }
+    }
+
+    return true;
+};
+
+Time complexity: O(n)
+Space complexity: O(n);
